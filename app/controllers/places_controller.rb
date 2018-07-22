@@ -8,7 +8,6 @@ class PlacesController < ApplicationController
   #create place
   def create
     @place = Place.new(place_params)
-  
     @place.save
     redirect_to @place
   end

@@ -1,24 +1,25 @@
-# README
+# Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+* Ruby Version 2.4.4
 
-* Ruby version
+* Rails Version 5.2.1
 
-* System dependencies
+* MySQL or MariaDB
 
-* Configuration
+## Contributing
 
-* Database creation
+In order to contribute back to the project, start by forking the project to your own repository. 
 
-* Database initialization
+Create a branch with a name of the feature or bug that you are fixing. 
 
-* How to run the test suite
+When complete, submit a pull request to the development branch.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Other Notes
 
-* Deployment instructions
+Credentials, such as API keys are stored in credentials.yml.enc. [More Info](http://guides.rubyonrails.org/5_2_release_notes.html#credentials)
 
-* ...
+## Master Deployment Site
+
+[Hosted at Heroku](https://vast-shore-58471.herokuapp.com/)
