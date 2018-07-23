@@ -47,8 +47,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+#Updated for heroku
+# production:
+#   <<: *default
+#   database: y-team_production
+#   username: y-team
+#   password: <%= ENV['Y-TEAM_DATABASE_PASSWORD'] %>
 production:
-  <<: *default
-  database: y-team_production
-  username: y-team
-  password: <%= ENV['Y-TEAM_DATABASE_PASSWORD'] %>
+    url: <%= ENV['DATABASE_URL'] %>
