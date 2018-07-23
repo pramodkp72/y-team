@@ -1,0 +1,2 @@
+class NearmesController < ApplicationController
+end
