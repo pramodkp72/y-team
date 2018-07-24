@@ -4,11 +4,10 @@
     <title>YTeam</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <script
+    <!-- <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-
+  crossorigin="anonymous"></script> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,8 +16,8 @@
     <nav class="navbar navbar-expand-lg bg-info">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="/welcome.html">GNV Explorer</a>
-                <!-- <%=link_to image_tag("GNV-Xplorer.png") , root_path, { :class=>"navbar-brand"} %> -->
+                <%=link_to image_tag("GNV-Xplorer.png", width: 80, height: 45), root_path, { :class=>"navbar-brand" } %>
+                <!-- <%=link_to "GNV-Xplorer" , root_path, { :class=>"navbar-brand"} %> -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="navbar-toggler-icon"></span>
@@ -34,7 +33,12 @@
                         <!-- <a href="#places" class="nav-link">link</a> -->
                     </li>
                     <li class="nav-item">
-                        <a href="#events" class="nav-link">link</a>
+                        <!-- <a href="#events" class="nav-link">link</a> -->
+                        <%=link_to "Events", events_path, { :class=>"nav-link"} %>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a href="#events" class="nav-link">link</a> -->
+                        <%=link_to "Near Me", nearmes_path, { :class=>"nav-link"} %>
                     </li>
                 </ul>
                 <form class="form-inline ml-auto">
@@ -49,6 +53,44 @@
         </div>
     </nav>
 
+
+
     <%= yield %>
   </body>
+  <footer class="footer" >
+  <div class="container">
+    <nav class="float-left">
+      <ul>
+        <li>
+          <a href="https://www.creative-tim.com">
+              Creative Tim
+          </a>
+        </li>
+        <li>
+          <a href="https://creative-tim.com/presentation">
+              About Us
+          </a>
+        </li>
+        <li>
+          <a href="http://blog.creative-tim.com">
+              Blog
+          </a>
+        </li>
+        <li>
+          <a href="https://www.creative-tim.com/license">
+              Licenses
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="copyright float-right">
+        &copy;
+        <script>
+            document.write(new Date().getFullYear())
+        </script>, made with <i class="material-icons">favorite</i> by
+        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+    </div>
+  </div>
+</footer>
+
 </html>

@@ -19,3 +19,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require material
+//= bootstrapMaterialDesign
+//= jquery
