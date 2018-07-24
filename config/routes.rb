@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :places
   resources :users
   resources :sessions
+  resources :events
+  resource :nearmes
 end
