@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
 
+  before_action :require_user, only: [:show]
   #list all places
   def index
     @places = Place.all
