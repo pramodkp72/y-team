@@ -22,4 +22,4 @@
 
 
 <div id='map' style="height: 800px" data-place="<%= @place.to_json %>" >></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXZYOFeJdd_ODHBvmoP6wuriOVVI1lPvI&callback=initMap" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.gmaps_api_key %>&callback=initMap" type="text/javascript"></script>

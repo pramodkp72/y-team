@@ -21,6 +21,11 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
+
+   <% if current_user %>
+   <li> <%= current_user.uname %></li>
+
+
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <%=link_to "Places", places_path, { :class=>"nav-link"} %>
@@ -28,6 +33,12 @@
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Events</a>
         </li>
+        <li class="nav-item">
+          <%=link_to "Logout", sessions_path, { :class=>"nav-link"} %>
+        </li>
+
+        <% else %>
+
         <%# <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu" aria-labelledby="dropdown03">
@@ -36,12 +47,26 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li> %>
+        <li class="nav-item">
+          <%=link_to "Login/Signup", sessions_path, { :class=>"nav-link"} %>
+        </li>
+
       </ul>
+
+      <% end %>
+
       <form class="form-inline my-2 my-md-0">
         <input class="form-control" type="text" placeholder="Search">
       </form>
+
+
+
     </div>
   </nav>
+
+  <% flash.each do |type, message| %>
+			<div class="alert alert-<%= type %>"><%= message %></div>
+		<% end %>
 
     <%= yield %>
   </body>
