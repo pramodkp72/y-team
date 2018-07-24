@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :events
-  resource :nearmes
+  resources :nearmes
+  resources :profiles
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_24_015015) do
+ActiveRecord::Schema.define(version: 2018_07_24_193132) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2018_07_24_015015) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "image_uri"
+    t.string "location"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "uname"
     t.string "password"
@@ -38,4 +49,5 @@ ActiveRecord::Schema.define(version: 2018_07_24_015015) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "profiles", "users"
 end
