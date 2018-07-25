@@ -12,11 +12,11 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
 //= require jquery3
 //= require popper
+//= require plugins/moment.min.js
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require core/bootstrap-material-design.min.js
 //= require material
-//= bootstrapMaterialDesign
-//= jquery
+//= require_tree .
