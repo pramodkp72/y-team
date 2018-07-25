@@ -8,8 +8,8 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script> -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -28,23 +28,44 @@
 
 
             <div class="collapse navbar-collapse">
-              <% if current_user %>
-                <li> <%= current_user.uname %></li>
-                  <ul class="navbar-nav">
+              <ul class="navbar-nav">
+                  <% if current_user %>
+                <li class="nav-item">
+
+                  <%= link_to current_user.uname, root_path, { :class=>"nav-link"} %>
+                </li>
                     <li class="nav-item">
                       <%=link_to "Places", places_path, { :class=>"nav-link"} %>
                       <!-- <a href="#places" class="nav-link">link</a> -->
                     </li>
                     <li class="nav-item">
-                      <a href="#events" class="nav-link">link</a>
+                        <!-- <a href="#events" class="nav-link">link</a> -->
+                        <%=link_to "Events", events_path, { :class=>"nav-link"} %>
                     </li>
                     <li class="nav-item">
-                      <%=link_to "Logout", session_path(current_user.id), method: :delete,  class: "nav-link"  %>
-                      <%=link_to "Logout", sessions_path, { :class=>"nav-link"} %>
+                        <!-- <a href="#events" class="nav-link">link</a> -->
+                        <%=link_to "Near Me", nearmes_path, { :class=>"nav-link"} %>
+                    </li>
+
+                    <li class="nav-item">
+                      <%=link_to "Logout", session_path(current_user.id), {method: :delete,   class: "nav-link"} %>
+
                     </li>
                   <% else %>
                     <li class="nav-item">
                       <%=link_to "Login/Signup", sessions_path, { :class=>"nav-link"} %>
+                    </li>
+                    <li class="nav-item">
+                      <%=link_to "Places", places_path, { :class=>"nav-link"} %>
+                      <!-- <a href="#places" class="nav-link">link</a> -->
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a href="#events" class="nav-link">link</a> -->
+                        <%=link_to "Events", events_path, { :class=>"nav-link"} %>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a href="#events" class="nav-link">link</a> -->
+                        <%=link_to "Near Me", nearmes_path, { :class=>"nav-link"} %>
                     </li>
                   <% end %>
                 </ul>
