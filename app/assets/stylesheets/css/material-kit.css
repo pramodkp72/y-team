@@ -4190,6 +4190,7 @@ tbody.collapse.show {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  
 }
 
 .navbar-brand:hover,
@@ -5973,6 +5974,7 @@ button.close {
 
 .carousel {
   position: relative;
+
 }
 
 .carousel-inner {
