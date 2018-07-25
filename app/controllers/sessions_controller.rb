@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     # puts "------------------------------"
     # puts params.inspect
     @user = User.find_by_uname(params[:session][:uname])
-   if @user.password == params[:session][:password]
+   if @user && @user.password == params[:session][:password]
      session[:user_id] = @user.id
      puts "Hello World"
 
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
  def destroy
    session[:user_id] = nil
-   redirect_to sessions_path 
+   redirect_to sessions_path
  end
 
   end
