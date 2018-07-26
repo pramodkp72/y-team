@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   def show
     # return unless session[:user_id]
     # @current_user ||= User.find(session[:user_id])
-    @profile = Profile.find(session[:user_id])
+    @profile = Profile.find_by(user_id:(session[:user_id]))
   end
 
   def index
@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find_by(user_id:(session[:user_id]))
     if @profile.update_attributes(profile_params)
       puts @profile
       flash[:success] = "Profile Updated"
