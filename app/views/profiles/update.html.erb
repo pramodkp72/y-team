@@ -1,10 +1,12 @@
+<div class="card">
+  <div class="card-body">
 <%= form_with scope: :profile, url: profile_path, local: true do |form| %>
   <input name="_method" type="hidden" value="patch" />
   <p>
     <%= form.label :first_name %><br>
     <%= form.text_field :first_name %>
   </p>
- 
+
   <p>
     <%= form.label :last_name %><br>
     <%= form.text_field :last_name%>
@@ -24,3 +26,6 @@
 <% end %>
 
 <%# a partial could get this to one form %>
+
+</div>
+</div>
