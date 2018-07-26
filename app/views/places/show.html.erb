@@ -1,10 +1,16 @@
 <div class="container">
   <div class="row">
     <div class ="col-md-6">
-      <img style="width:100%;" src="<%= @place.image_uri %>" alt="<%= @place.image_uri %>">
+      <div class ="card bg-dark text-white m-0">
+        <img class= "card-img">
+          <img style="height:50vh;"  src="<%= @place.image_uri %>" alt="<%= @place.image_uri %>">
+          <div class="card-img-overlay">
+            <h4 class="card-title"><%=@place.name %></h4>
+        </div>
+      </div>
     </div>
     <div class ="col-md-6">
-      <div id='map' data-place="<%= @place.to_json %>" style="height:100px;">
+      <div id='map' class="places_map" data-place="<%= @place.to_json %>" style="height:50vh;">
         <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.gmaps_api_key %>&callback=initMap" type="text/javascript"></script>
       </div>
     </div>
