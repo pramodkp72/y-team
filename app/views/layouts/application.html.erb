@@ -24,12 +24,14 @@
 
 
             <div class="collapse navbar-collapse">
+
               <ul class="navbar-nav">
                   <% if current_user %>
                 <li class="nav-item">
 
                   <%= link_to current_user.uname, profiles_path, { :class=>"nav-link"} %>
                 </li>
+
                     <li class="nav-item">
                       <%=link_to "Places", places_path, { :class=>"nav-link"} %>
                       <!-- <a href="#places" class="nav-link">link</a> -->
@@ -48,9 +50,7 @@
 
                     </li>
                   <% else %>
-                    <li class="nav-item">
-                      <%=link_to "Login/Signup", sessions_path, { :class=>"nav-link"} %>
-                    </li>
+
                     <li class="nav-item">
                       <%=link_to "Places", places_path, { :class=>"nav-link"} %>
                       <!-- <a href="#places" class="nav-link">link</a> -->
@@ -63,23 +63,43 @@
                         <!-- <a href="#events" class="nav-link">link</a> -->
                         <%=link_to "Near Me", nearmes_path, { :class=>"nav-link"} %>
                     </li>
+
+                  </ul>
+
                   <% end %>
-                </ul>
-                <form class="form-inline ml-auto">
-                <div class="form-group no-border">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-white btn-just-icon btn-round">
-                   <i class="material-icons">search</i>
-                </button>
-              </form>
+
+
             </div>
+
+            <form class="form-inline ml-auto">
+            <div class="form-group no-border">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-white btn-just-icon btn-round">
+               <i class="material-icons">search</i>
+            </button>
+          </form>
+          <ul class="navbar-nav nav justify-content-end">
+          <li class="nav-item">
+            <%=link_to "Login/Signup", sessions_path, { :class=>"nav-link"} %>
+          </li>
+
+          </ul>
+
         </div>
+
+
+
     </nav>
 
+<!-- Wrong Sign in information -->
   <% flash.each do |type, message| %>
 			<div class="alert alert-<%= type %>"><%= message %></div>
 		<% end %>
+
+
+
+
 
     <%= yield %>
   </body>
@@ -89,7 +109,7 @@
       <ul>
         <li>
           <a href="http://www.cityofgainesville.org/">
-              City of Gainesville 
+              City of Gainesville
           </a>
         </li>
         <li>
