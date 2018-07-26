@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class ="col-md-6">
+    <div class ="col-md-6 mb-3">
       <div class ="card bg-dark text-white m-0">
         <img class= "card-img">
           <img style="height:50vh;"  src="<%= @place.image_uri %>" alt="<%= @place.image_uri %>">
@@ -9,10 +9,33 @@
         </div>
       </div>
     </div>
-    <div class ="col-md-6">
+    <div class ="col-md-6 mb-3">
       <div id='map' class="places_map" data-place="<%= @place.to_json %>" style="height:50vh;">
         <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.gmaps_api_key %>&callback=initMap" type="text/javascript"></script>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class ="col-md-12 mb-3" style="background-color:green; height:5vh;">
+    </div> 
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class ="col-md-6 mb-3">
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus neque, eleifend vel turpis ut, gravida consequat risus. Phasellus arcu lacus, sollicitudin malesuada dolor vitae, imperdiet porta felis. Pellentesque ac ullamcorper purus. Proin nec placerat est. Vestibulum sodales neque quis mollis ultricies. Aenean eget imperdiet mi. Aenean interdum, mi sit amet luctus rutrum, orci nunc imperdiet purus, at hendrerit lacus ante et ante. Duis accumsan diam tellus, in aliquam massa gravida quis. Nulla cursus lorem at nulla dignissim, eu lacinia sem egestas. Ut non lorem eu ligula tincidunt tincidunt in in velit. Curabitur pretium, nisi et pretium cursus, urna odio tempus mi, nec varius nisl nulla at nibh. Vivamus condimentum scelerisque enim eu posuere. Phasellus vel varius sapien.
+
+      
+      </h4>
+    </div>
+    <div class ="col-md-6 mb-3">
+    <h4>
+    Suspendisse venenatis mauris ut tortor lacinia, non faucibus quam pellentesque. Sed nec tincidunt nibh. Praesent ut congue lectus. Sed scelerisque quam eget odio aliquam venenatis. Sed efficitur at nisi eget molestie. Aenean viverra quis erat sit amet lobortis. Curabitur leo nibh, placerat ac risus ac, efficitur blandit ante. Duis volutpat et orci sit amet euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam et gravida ipsum, vehicula feugiat turpis. Ut pretium leo eget elit semper, id molestie sem suscipit. Cras tincidunt ex et augue aliquam sagittis.
+    </h4>
     </div>
   </div>
 </div>
