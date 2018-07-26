@@ -17,7 +17,13 @@
     </tr>
     <% end %>
  </table> -->
-  <h1 class="text-center"> Current Events! </h1>
+ <div class="card card-nav-tabs text-center">
+  <div class="card-header card-header-primary">
+<h1 class="text-center"> Current Events! </h1>
+  </div>
+  <div class="card-body">
+
+</div>
  <div class="container">
    <div class="row">
      <div class="col">
@@ -30,13 +36,11 @@
          </div>
        </div>     </div>
      <div class="col">
-       <button id='try-it'>Try It</button>
 
-       <p id="demo"></p>
-       <div id='map_nearme' style="width:400px;height:400px" data-place="<%= @place.to_json %>" ></div>
-       <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.gmaps_api_key %>&callback=initMap" type="text/javascript"></script>
-
-     </div>
+         <div id='map' class="places_map" data-place="<%= @place.to_json %>" style="height:50vh;">
+           <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.gmaps_api_key %>&callback=initMap" type="text/javascript"></script>
+         </div>
+       </div>
      <div class="w-100"></div>
 <div class="col"><div class="card">
   <div class="card-body">
@@ -59,4 +63,6 @@
   </div>
 </div>
 
-   </div>
+   </div> </div> </div> </div>
+
+     </div>
