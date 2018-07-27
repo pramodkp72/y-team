@@ -9,9 +9,17 @@ $(document).ready(function(){
     }
   }
 
+<<<<<<< HEAD
   function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
     //  var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+=======
+
+  function showPosition(position) {
+
+    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+     var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+>>>>>>> 304e2b75af923baca2c7e13639e78c8237e4c200
 
     gMap = new google.maps.Map(document.getElementById('map_nearme'));
     gMap.setZoom(18);      // This will trigger a zoom_changed on the map
@@ -43,6 +51,7 @@ $(document).ready(function(){
       infowindow.setContent(content);
       infowindow.open(gMap, marker)
     };
+<<<<<<< HEAD
 
 
   }
@@ -50,4 +59,10 @@ $(document).ready(function(){
   $("#try-it").click(function(){
     getLocation();
   });
+=======
+  }
+
+  getLocation();
+
+>>>>>>> 304e2b75af923baca2c7e13639e78c8237e4c200
 });
