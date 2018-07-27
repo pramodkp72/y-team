@@ -9,7 +9,8 @@ class NearmelistsController < ApplicationController
     puts lng
     require 'net/http'
     require 'json'
-    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1500&type=restaurant&keyword=food&key=" + Rails.application.credentials.gmaps_api_key
+    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=1500&type=restaurant&keyword=food&key=AIzaSyCio1lbC-bpZGEb7FEcwBryRGpVlLe96LQ"
+    #url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.4318171,-111.9063735&radius=1500&type=restaurant&keyword=food&key=AIzaSyCio1lbC-bpZGEb7FEcwBryRGpVlLe96LQ"
     uri = URI(url)
     responce = Net::HTTP.get(uri)
     places = JSON.parse(responce)
