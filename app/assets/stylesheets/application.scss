@@ -37,15 +37,31 @@
   width: 80px;
 }
 
+.footer {
+  margin-top: 20px;
+}
+
 // can prob be removed and use container class
 .card-new {
   max-width: 80%;
   margin: auto;
 }
 
+// places index
 .media {
   padding: 10px;
 }
 .media img {
   max-width: 200px;
+}
+
+// Welcome
+.carousel {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.carousel-item img{
+    object-fit: cover;
+    height: 500px;
 }
