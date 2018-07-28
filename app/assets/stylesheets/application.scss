@@ -23,21 +23,29 @@
 // Throw a comment in about whats going on if weird
 
  body {
-   font: 20px Montserrat, sans-serif;
+   font: Montserrat, sans-serif;
    line-height: 1.8;
    color: #686b6e;
    background: #c5c7c9
  }
 
- p {
-   font-size: 16px;
- }
+.navbar {
+  margin-bottom: 20px;
+}
 
- .navbar-brand img {
-   width: 80px;
- }
+.navbar-brand img {
+  width: 80px;
+}
 
-  .card-new {
-    max-width: 80%;
-    margin: auto;
-  }
+// can prob be removed and use container class
+.card-new {
+  max-width: 80%;
+  margin: auto;
+}
+
+.media {
+  padding: 10px;
+}
+.media img {
+  max-width: 200px;
+}
