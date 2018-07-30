@@ -1,21 +1,20 @@
 <div class="container">
-
-<div class="card card-nav-tabs text-center">
-  <h4 class="card-header card-header-info">Places</h4>
-
-  <div class="card-body">
-<div class="container">
-  <% @places.each do |place| %>
-  <div class="card" style="width: 20rem;">
-    <h4 class="card-title"> <%= link_to place.name, place_path(place) %></h4>
-    <img class="card-img-top" src="<%= place.image_uri %>" alt="Card image cap">
+  <div class="card text-center">
+    <div class="card-header card-header-primary">
+      <h1 class="text-center">All Places</h1>
+    </div>
     <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-        </div>
-
-  <% end %>
-</div>
-</div>
-</div>
+      <ul class="list-unstyled">
+        <% @places.each do |place| %>
+          <li class="media">
+            <img class="mr-3" src="<%= place.image_uri %>" alt="<%= place.name %>">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1"><%= link_to place.name, place_path(place) %></h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
