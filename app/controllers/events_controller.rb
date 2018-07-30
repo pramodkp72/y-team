@@ -10,7 +10,9 @@ class EventsController < ApplicationController
     @places = Place.all
   end
 
-  #create event 
+
+
+  #create event
   def create
     @event = Event.new(event_params)
     @event.user_id = session[:user_id]
@@ -29,5 +31,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :place_id, :description, :start_time, :end_time)
   end
-  
+
 end
