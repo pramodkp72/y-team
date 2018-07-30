@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_143330) do
+ActiveRecord::Schema.define(version: 2018_07_30_110150) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "start_time"
-    t.string "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "place_id"
     t.integer "category"
     t.bigint "user_id"
     t.boolean "enabled"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["place_id"], name: "index_events_on_place_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end

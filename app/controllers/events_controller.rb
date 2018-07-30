@@ -12,8 +12,6 @@ class EventsController < ApplicationController
 
   #create event 
   def create
-    puts event_params
-    puts session[:user_id]
     @event = Event.new(event_params)
     @event.user_id = session[:user_id]
     @event.enabled = 1
