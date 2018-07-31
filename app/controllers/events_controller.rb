@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def new
     @places = Place.all
+    @categories = Category.where(cat_type: 'Event')
   end
 
   #create event
