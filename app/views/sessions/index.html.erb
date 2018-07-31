@@ -1,7 +1,10 @@
-<h1> This is the Login Page </h1>
+<div class="undernav">
 
+  <h1>
+    This is the Login Page
+  </h1>
 
-<%= form_with scope: :session, url: sessions_path, local: true do |form| %>
+  <%= form_with scope: :session, url: sessions_path, local: true do |form| %>
   <p>
     <%= form.label :Username %><br>
     <%= form.text_field :uname %>
@@ -18,3 +21,5 @@
 <% end %>
 
 <%=link_to "Sign Up here if you are not an existing user", new_user_path %>
+
+</div>

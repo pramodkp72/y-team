@@ -13,24 +13,23 @@
   *
   *= require_self
 */
-
 @import "material";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "/\*";
-
 // Let's organize these by expected use case
 // i.e. Welcome Page vs whole site etc.
 // Throw a comment in about whats going on if weird
-html,
-body {
+
+body,
+html {
   height: 100%;
+  background: #E2E2E2;
 }
 
 body {
   font: Montserrat, sans-serif;
   line-height: 1.8;
   color: #424242;
-  background: #dddddd;
   display: flex;
   flex-direction: column;
 }
@@ -41,54 +40,128 @@ body {
 
 .footer {
   flex-shrink: 0;
+  position: relative;
+  top: 120px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  //text-align: center;
+  margin: 20px 0;
 }
 
 .navbar {
-  margin-bottom: 20px;
+  height: 80px;
+  top-margin: 10px;
+  bottom-margin: 20px;
 }
 
 .nav-item {
   color: #FFFFFF;
-
 }
 
 .navbar-brand img {
-  width: 80px;
+  width: 70px;
 }
 
-.footer {
-  margin: 20px 0 20px;
+.undernav {
+  background-color: #2098EB;
+  height: 150px;
 }
-
+//I know this might slow things down but I need it...
+.simple-space {
+  height: 30px;
+}
 // can prob be removed and use container class
 .card-new {
   max-width: 80%;
   margin: auto;
 }
 
+.card-bg {
+  border-radius: 2px;
+  background-color: #E2E2E2;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  word-wrap: break-word;
+  height: 100%;
+}
+//card with no dropshadow
+
+.card-flat {
+  border-radius: 2px;
+  background-color: #ffffff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  word-wrap: break-word;
+  height: 80%;
+}
+//card with hover shadow
+.card-hover {
+  border-radius: 2px;
+  background-color: #ffffff;
+
+  &:hover {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  word-wrap: break-word;
+}
 // places index
 .media {
   padding: 10px;
 }
+
 .media img {
   max-width: 200px;
 }
-
 // Welcome
 .carousel {
   overflow: hidden;
   margin-bottom: 20px;
 }
 
-.carousel-item img{
-    object-fit: cover;
-    height: 500px;
+.carousel-item img {
+  object-fit: cover;
+  height: 400px;
+  width: 300px;
 }
+
+.carousel-caption-2 {
+  color: white;
+  position: absolute;
+  right: 25%;
+  left: 25%;
+  text-align: center;
+  z-index: 1;
+  font-weight: bold;
+}
+
 .img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .logo-head {
   height: 100px;
   width: 100px;
+}
+
+.container {
+  bottom-margin: 20px;
+}
+
+.link_to {
+  color: #2098EB;
 }
