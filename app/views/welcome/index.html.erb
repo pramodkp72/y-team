@@ -2,11 +2,9 @@
   <div class="container">
     <div class="card-flat">
       <div class="card-body">
-
         <div id="hero-carousel" class="carousel slide carousel-fade card" data-ride="carousel">
           <div class="carousel-caption d-none d-md-block"></div>
           <div class="carousel-inner">
-
             <% @places.each_with_index do |place,index| %>
               <% if index == 0 %>
                 <div class="carousel-item active">
@@ -19,7 +17,6 @@
                     <h4><%= place.name %></h4>
                     <p>Gainesville's best places!</p>
                   </div>
-
                 </div>
               <%else%>
                 <div class="carousel-item">
@@ -41,9 +38,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-
         <div class="simple-space"></div>
-
         <div class="container">
           <div class="row">
             <div class="col">
@@ -62,7 +57,6 @@
                         <th>Description</th>
                       </tr>
                       <% @places.each do |place| %>
-
                         <tr>
                           <td>
                             <%= link_to place.name, place_path(place), {class: "link_to"} %>
@@ -74,7 +68,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col">
               <div class="card border-info">
                 <div class="card-header card-header-danger mx-auto">
@@ -89,9 +82,7 @@
                       <tr>
                         <th>Name</th>
                         <th>Description</th>
-
                       </tr>
-
                       <% @events.each do |event| %>
                         <tr>
                           <td>
@@ -100,19 +91,15 @@
                           <td>
                             <%= event.description %>
                           </td>
-
                         </tr>
                       <% end %>
                     </table>
                   </p>
-
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </div>

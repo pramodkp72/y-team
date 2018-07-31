@@ -23,13 +23,13 @@
 body,
 html {
   height: 100%;
-  background: #E2E2E2;
 }
 
 body {
   font: Montserrat, sans-serif;
   line-height: 1.8;
   color: #424242;
+  background: #E2E2E2;
   display: flex;
   flex-direction: column;
 }
@@ -40,19 +40,17 @@ body {
 
 .footer {
   flex-shrink: 0;
-  position: relative;
-  top: 120px;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  //text-align: center;
-  margin: 20px 0;
+  // position: relative;
+  // top: 120px;
+  // left: 0;
+  // bottom: 0;
+  // width: 100%;
+  // //text-align: center;
+  // margin: 20px 0;
 }
 
 .navbar {
   height: 80px;
-  top-margin: 10px;
-  bottom-margin: 20px;
 }
 
 .nav-item {
@@ -67,11 +65,14 @@ body {
   background-color: #2098EB;
   height: 150px;
 }
+<<<<<<< HEAD
 //I know this might slow things down but I need it...
 .simple-space {
   height: 10px;
 }
 
+=======
+>>>>>>> 6f49281447f1e284dce3efb892c09a3e641bb77a
 
 // can prob be removed and use container class
 .card-new {
@@ -144,7 +145,7 @@ body {
 // Welcome
 .carousel {
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .carousel-item img {
@@ -176,7 +177,7 @@ body {
 }
 
 .container {
-  bottom-margin: 20px;
+  margin-bottom: 20px;
 }
 
 .link_to {
