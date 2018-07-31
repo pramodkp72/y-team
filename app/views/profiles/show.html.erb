@@ -27,13 +27,11 @@
         <div class="input-group mb-3">
           <%= form.text_field :image_uri, class: 'form-control', placeholder: "Image URL", 'aria-label': :name, 'aria-describedby': 'basic-addon2', required: true %>
         </div>
-
+        <img src="<%= @profile ? @profile.image_uri : '' %>" alt="">
         <div>
           <%= form.submit :"Submit", class:"btn btn-secondary" %>
         </div>
-
       <% end %>
     </div>
   </div>
-</div>
 </div>
