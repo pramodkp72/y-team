@@ -10,8 +10,6 @@ class EventsController < ApplicationController
     @places = Place.all
   end
 
-
-
   #create event
   def create
     @event = Event.new(event_params)

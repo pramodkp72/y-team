@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     @category.name = params[:category][:name]
+    @category.cat_type = params[:category][:cat_type]
     @category.description = params[:category][:description]
     @category.save
 
@@ -19,6 +20,7 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+    puts @category.cat_type
   end
 
   def create
@@ -36,7 +38,7 @@ class CategoriesController < ApplicationController
 
   private
   def user_params
-    params.require(:category).permit(:name, :description)
+    params.require(:category).permit(:name, :cat_type, :description)
   end
 
 end
