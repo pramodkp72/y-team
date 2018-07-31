@@ -3,14 +3,13 @@ class EventsController < ApplicationController
 
   #list all events
   def index
-    @events = Event.all
+    @events = Event.where("end_time > ? ", Time.now)
   end
 
   def new
     @places = Place.all
+    @categories = Category.where(cat_type: 'Event')
   end
-
-
 
   #create event
   def create
