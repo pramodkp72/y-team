@@ -62,7 +62,7 @@ $(document).ready(function(){
       photo_reference = response.results[0].photos[0].photo_reference
       alert(photo_reference);
 
-      image_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + photo_reference + "&key=Fakekey"
+      image_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + photo_reference + "&key=AIzaSyCio1lbC-bpZGEb7FEcwBryRGpVlLe96LQ"
       $('#place_image_uri').val(image_url);
       // ---------------------------------------------------------
       // $.get({
