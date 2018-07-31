@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @categories = Category.all
+    @categories = Category.where(cat_type: 'Place')
   end
 
   #create place
@@ -21,7 +21,6 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
     @category = Category.find(@place.cat_id)
-    puts @category.name
   end
 
   #creates new place. no error checking yet.
