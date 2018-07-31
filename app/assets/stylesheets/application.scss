@@ -69,8 +69,10 @@ body {
 }
 //I know this might slow things down but I need it...
 .simple-space {
-  height: 30px;
+  height: 10px;
 }
+
+
 // can prob be removed and use container class
 .card-new {
   max-width: 80%;
@@ -101,8 +103,20 @@ body {
   min-width: 0;
   position: relative;
   word-wrap: break-word;
-  height: 80%;
+
 }
+.card-map {
+  border-radius: 2px;
+  background-color: #ffffff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  width: 100%;
+}
+
 //card with hover shadow
 .card-hover {
   border-radius: 2px;
@@ -137,6 +151,9 @@ body {
   object-fit: cover;
   height: 400px;
   width: 300px;
+}
+.carousel-caption{
+  text-shadow: 2px 2px #000000;
 }
 
 .carousel-caption-2 {
