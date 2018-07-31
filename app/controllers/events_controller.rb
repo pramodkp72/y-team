@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   #list all events
   def index
-    @events = Event.all
+    @events = Event.where("end_time > ? ", Time.now)
   end
 
   def new
