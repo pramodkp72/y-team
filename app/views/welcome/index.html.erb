@@ -44,7 +44,7 @@
             <div class="col">
               <div class="card border-info">
                 <div class="card-header card-header-danger mx-auto">
-                  <h4 class="card-title">Top Ten Places</h4>
+                  <h4 class="card-title">Newest Place</h4>
                   <!-- <p class="category">Category subtitle</p> -->
                 </div>
                 <div class="card-body text-info">
@@ -56,13 +56,16 @@
                         <th>Name</th>
                         <th>Description</th>
                       </tr>
-                      <% @places.each do |place| %>
+                      <% p = Place.last %>
                         <tr>
                           <td>
-                            <%= link_to place.name, place_path(place), {class: "link_to"} %>
+                            <%= link_to p.name, place_path(p), {class: "link_to"} %>
+                          </td>
+                          <td>
+                          <%= p.description %>
                           </td>
                         </tr>
-                      <% end %>
+                      
                     </table>
                   </p>
                 </div>
@@ -71,7 +74,7 @@
             <div class="col">
               <div class="card border-info">
                 <div class="card-header card-header-danger mx-auto">
-                  <h4 class="card-title mx-auto">Top Events Places</h4>
+                  <h4 class="card-title mx-auto">Newest Event</h4>
                   <!-- <p class="category">Events</p> -->
                 </div>
                 <div class="card-body text-info">
@@ -83,16 +86,15 @@
                         <th>Name</th>
                         <th>Description</th>
                       </tr>
-                      <% @events.each do |event| %>
+                      <% e = Event.last %>
                         <tr>
                           <td>
-                            <%= link_to event.name, event_path(event), {class: "link_to"} %>
+                            <%= link_to e.name, place_path(e), {class: "link_to"} %>
                           </td>
                           <td>
-                            <%= event.description %>
+                          <%= e.description %>
                           </td>
                         </tr>
-                      <% end %>
                     </table>
                   </p>
                 </div>
