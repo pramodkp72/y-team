@@ -1,4 +1,3 @@
-<div class="undernav">
   <div class="container">
     <div class="card">
       <div class="card-body">
@@ -78,8 +77,8 @@
                 </div>
               </div>
                 <h4 class="card-title">Comments</h4>
-                
-                <% @place_comments.select{|p| p.place_id == @place.id}.each do |pc| %>  
+
+                <% @place_comments.select{|p| p.place_id == @place.id}.each do |pc| %>
                   <p class = "card-text">
                   <%= pc.title %>
                   <br>
@@ -89,6 +88,7 @@
                 <% end %>
             </div>
           </div>
+
         </div>
       </div>
     </div>
