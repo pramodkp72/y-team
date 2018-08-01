@@ -8,11 +8,11 @@ class PlaceCommentsController < ApplicationController
   end
 
   def create
-    # @places = Places.all
     @place_comment = PlaceComment.new(user_params)
-    # testing
-    @place_comment.user_id = 1
-    @place_comment.place_id = 1
+    @place_comment.place_id = params[:place_id] 
+    @place_comment.user_id = session[:user_id]
+
+    # hardcoded ouch EH
     @place_comment.rating = 5
 
     @place_comment.flagged = 0
