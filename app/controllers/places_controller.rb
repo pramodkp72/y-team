@@ -19,8 +19,11 @@ class PlacesController < ApplicationController
 
   #show single
   def show
+    @place_comment = PlaceComment.new
     @place_comments = PlaceComment.all
     @place = Place.find(params[:id])
+    puts @place.id
+    puts "asdasdasdsadasdsadasdasdasdasdasdasdasdasdasdadasdasdas"
     @category = Category.find(@place.cat_id)
   end
 

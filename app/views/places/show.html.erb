@@ -9,13 +9,16 @@
                 <img class="card-img">
                 <img style="height:50vh;" src="<%= @place.image_uri %>" alt="<%= @place.image_uri %>">
                 <div class="card-img-overlay">
-                  <h4 class="card-title"><%=@place.name %></h4>
+                  <h4 class="card-title">
+                    <%=@place.name %>
+                  </h4>
                 </div>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div id='map' class="places_map" data-place="<%= @place.to_json %>" style="height:50vh;">
-                <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.gmaps_api_key %>&callback=initMap" type="text/javascript"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.gmaps_api_key %>&callback=initMap"
+                  type="text/javascript"></script>
               </div>
             </div>
           </div>
@@ -29,13 +32,51 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <div class="card-body">
-                <h4 class="card-title"><%= @category.name %></h4>
-                <p class="card-text"><%=@place.description %></p>
+                <h4 class="card-title">
+                  <%= @category.name %>
+                </h4>
+                <p class="card-text">
+                  <%=@place.description %>
+                </p>
                 <a href="places/new" class="button">Add a new place!</a>
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card-body">
+                <h4 class="card-title">Review</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Comments</h6>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  Launch demo modal
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Add a Comment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= form_for @place_comment do |form| %>
+                        <%= hidden_field_tag :place_id, @place.id %>
+                          <div class="input-group mb-3">
+                            <%= form.text_field :title, class: 'form-control', placeholder: :title, 'aria-label': :title, 'aria-describedby': 'basic-addon2', required: true %>
+                          </div>
+                          <div class="input-group mb-3">
+                            <%= form.text_area :text, class: 'form-control', placeholder: 'Comment', 'aria-label': :text, 'aria-describedby': 'basic-addon2', required: true %>
+                          </div>
+                      </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <%= form.submit :submit, class:"btn btn-secondary" %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
                 <h4 class="card-title">Comments</h4>
                 
                 <% @place_comments.select{|p| p.place_id == @place.id}.each do |pc| %>  
@@ -46,12 +87,11 @@
                   </br>
                   </p>
                 <% end %>
-
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
