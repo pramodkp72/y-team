@@ -8,18 +8,6 @@ class PlacesController < ApplicationController
 
   def new
     @categories = Category.where(cat_type: 'Place')
-
-
-   @place = Place.new
-   puts params[:place1]
-   puts params[:place2]
-   puts params[:place3]
-   places_list = []
-   places_list.push(params[:place1])
-   places_list.push(params[:place2])
-   places_list.push(params[:place3])
-   @places_list = places_list
-   puts @places_list
   end
 
   #create place
