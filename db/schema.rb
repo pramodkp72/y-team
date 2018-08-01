@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_205858) do
+ActiveRecord::Schema.define(version: 2018_08_01_191824) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 2018_07_31_205858) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "cat_type"
+  end
+
+  create_table "event_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "rating"
+    t.string "title"
+    t.text "text"
+    t.boolean "flagged"
+    t.boolean "enabled"
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_comments_on_event_id"
+    t.index ["user_id"], name: "index_event_comments_on_user_id"
   end
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,6 +101,8 @@ ActiveRecord::Schema.define(version: 2018_07_31_205858) do
     t.boolean "enabled"
   end
 
+  add_foreign_key "event_comments", "events"
+  add_foreign_key "event_comments", "users"
   add_foreign_key "events", "places"
   add_foreign_key "events", "users"
   add_foreign_key "place_comments", "places"
