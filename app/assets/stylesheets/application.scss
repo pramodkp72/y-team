@@ -36,6 +36,14 @@ a {
   color: var(--info-dark);
 }
 
+h1, h4{
+  font-weight: bold;
+}
+
+h5{
+  color: var(--info);
+  font-weight: bold;
+}
 
 a:active,
 a:focus,
@@ -316,6 +324,11 @@ a.text-primary:active, a.text-primary:focus, a.text-primary:hover {
 .logo-head {
   height: 100px;
   width: 100px;
+}
+
+.front-logo{
+    width: 100px;
+    z-index: 1;
 }
 
 .container {
