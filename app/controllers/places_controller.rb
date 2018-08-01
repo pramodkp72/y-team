@@ -34,7 +34,6 @@ class PlacesController < ApplicationController
     @place_comments = PlaceComment.all
     @place = Place.find(params[:id])
     @category = Category.find(@place.cat_id)
-    @pid = @place.id
   end
 
   #creates new place. no error checking yet.

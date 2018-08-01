@@ -38,7 +38,7 @@
               <div class="card-body">
                 <h4 class="card-title">Comments</h4>
                 
-                <% @place_comments.select{|p| p.place_id == @pid}.each do |pc| %>  
+                <% @place_comments.select{|p| p.place_id == @place.id}.each do |pc| %>  
                   <p class = "card-text">
                   <%= pc.title %>
                   <br>
