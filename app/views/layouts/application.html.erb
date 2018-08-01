@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<body>
   <head>
     <title>GNV-Explorer</title>
     <meta content="initial-scale=1, width=device-width" name="viewport">
@@ -7,11 +8,10 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-xl bg-info">
-        <div class="container">
+      <header>
+      <nav class="navbar navbar-expand-md bg-info">
           <%=link_to image_tag("GNV_new.png"), root_path, { :class=>"navbar-brand" } %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -57,7 +57,6 @@
               <% end %>
             </ul>
           </div>
-        </div>
       </nav>
     </header>
 
@@ -72,7 +71,7 @@
     <div class="content">
     <%= yield %>
     </div>
-    
+
     <footer class="footer">
       <div class="container">
         <div class="copyright float-right">
@@ -86,6 +85,8 @@
         </div>
       </div>
     </footer>
+
+
 
   </body>
 </html>

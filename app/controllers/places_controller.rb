@@ -1,5 +1,4 @@
 class PlacesController < ApplicationController
-  skip_before_action :verify_authenticity_token
   before_action :require_user, only: [:show]
   #list all places
   def index
