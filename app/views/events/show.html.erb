@@ -2,7 +2,6 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-
         <div class="container">
           <div class="row">
             <div class="col-md-6 mb-3">
@@ -21,27 +20,24 @@
             </div>
           </div>
         </div>
-
         <div class="container">
           <div class="row">
             <div class="col-md-12 mb-3" style="background-color:white; height:5vh;"></div>
           </div>
         </div>
-
         <div class="container">
           <div class="row">
             <div class="col-md-6 mb-3">
               <div class="card-body">
-                <h4 class="card-title"><%=@event.name %></p>
-              </h4>
-              <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+              <h4 class="card-title"><%=@event.name %></h4>
+              </br>
+              <h6 class="card-subtitle mb-0 text-muted">Description</h6>
               <p class="card-text"><%=@event.description %></p>
-              <h6 class="card-subtitle mb-2 text-muted">Start Time</h6>
+              <h6 class="card-subtitle mb-0 text-muted">Start Time</h6>
               <p class="card-text"><%=@event.start_time %></p>
-              <h6 class="card-subtitle mb-2 text-muted">End Time</h6>
+              <h6 class="card-subtitle mb-0 text-muted">End Time</h6>
               <p class="card-text"><%=@event.end_time %></p>
-              <a href="#0" class="card-link">Card link</a>
-              <a href="#0" class="card-link">Another link</a>
+              <a href="events/new" class="button">Add a new event!</a>
             </div>
           </div>
           <div class="col-md-6 mb-3">
@@ -56,7 +52,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
