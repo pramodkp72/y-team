@@ -31,13 +31,6 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <div class="card-body">
-<<<<<<< HEAD
-                <h4 class="card-title">Place</h4>
-                <h6 class="card-subtitle mb-2 text-muted"><%= @category.name %></h6>
-                <p class="card-text"><%=@place.description %></p>
-                <a href="#0" class="card-link">Card link</a>
-                <a href="#0" class="card-link">Another link</a>
-=======
                 <h4 class="card-title">
                   <%= @category.name %>
                 </h4>
@@ -45,19 +38,12 @@
                   <%=@place.description %>
                 </p>
                 <a href="places/new" class="button">Add a new place!</a>
->>>>>>> de1bfc8da7ff6398ba0dfa51ecfef9267ff1a667
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <div class="card-body">
                 <h4 class="card-title">Review</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Comments</h6>
-<<<<<<< HEAD
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci est, efficitur ac elementum nec, dapibus nec nunc. Integer vitae tincidunt ligula. Nunc dignissim vehicula diam, euismod aliquet erat eleifend ac. Curabitur eu
-                  porta turpis. Aliquam erat volutpat. Nulla purus arcu, euismod in nulla ut, gravida viverra sem. Integer diam ipsum, elementum vel arcu dignissim, efficitur tempus sapien.</p>
-                <a href="#0" class="card-link">Card link</a>
-                <a href="#0" class="card-link">Another link</a>
-=======
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                   Launch demo modal
                 </button>
@@ -89,11 +75,10 @@
                     </div>
                   </div>
                 </div>
->>>>>>> de1bfc8da7ff6398ba0dfa51ecfef9267ff1a667
               </div>
                 <h4 class="card-title">Comments</h4>
-                
-                <% @place_comments.select{|p| p.place_id == @place.id}.each do |pc| %>  
+
+                <% @place_comments.select{|p| p.place_id == @place.id}.each do |pc| %>
                   <p class = "card-text">
                   <%= pc.title %>
                   <br>
@@ -108,8 +93,5 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-=======
 </div>
 </div>
->>>>>>> de1bfc8da7ff6398ba0dfa51ecfef9267ff1a667
