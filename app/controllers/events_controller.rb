@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def new
     @events = Event.all
+    @places = Place.all
     @categories = Category.where(cat_type: 'Event')
   end
 
@@ -24,14 +25,16 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @event_comment = EventComment.new
-    @event_comments = EventComment.all
-    #@category = Category.find(@event.cat_id)
+    @event_comments = EventComment.order(id: :desc)
+    @category = Category.find(@event.cat_id)
+    @profiles = Profile.all
+    @users = User.all
   end
 
   #create new event from parameters
   private
   def event_params
-    params.require(:event).permit(:name, :place_id, :description, :start_time, :end_time)
+    params.require(:event).permit(:name, :place_id, :description, :start_time, :end_time, :cat_id)
   end
 
 end

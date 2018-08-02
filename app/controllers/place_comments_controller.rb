@@ -19,8 +19,8 @@ class PlaceCommentsController < ApplicationController
     @place_comment.enabled = 1
     @place_comment.save!
 
-    flash[:success] = @place_comment.title + " has been added"
-    redirect_to action: "index"
+    # flash[:success] = @place_comment.title + " has been added"
+    redirect_to place_path(:id => @place_comment.place_id)
   end
 
   private
