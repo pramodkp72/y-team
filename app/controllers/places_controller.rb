@@ -21,8 +21,9 @@ class PlacesController < ApplicationController
     @place_comment = PlaceComment.new
     @place_comments = PlaceComment.all
     @place = Place.find(params[:id])
-    puts @place.id
     @category = Category.find(@place.cat_id)
+    @profiles = Profile.all
+    @users = User.all
   end
 
   #creates new place. no error checking yet.
