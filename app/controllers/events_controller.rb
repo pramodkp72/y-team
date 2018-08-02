@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    @places = Place.all
+    @events = Event.all
     @categories = Category.where(cat_type: 'Event')
   end
 
@@ -23,6 +23,9 @@ class EventsController < ApplicationController
   #show single event
   def show
     @event = Event.find(params[:id])
+    @event_comment = EventComment.new
+    @event_comments = EventComment.all
+    #@category = Category.find(@event.cat_id)
   end
 
   #create new event from parameters

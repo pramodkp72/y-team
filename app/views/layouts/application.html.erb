@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GNV-Explorer</title>
-    <meta content="initial-scale=1, width=device-width" name="viewport">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
   <body>
+    <head>
+      <title>GNV-Explorer</title>
+      <meta content="initial-scale=1, width=device-width" name="viewport">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%= javascript_include_tag 'application' %>
+
+    </head>
     <header>
-      <nav class="navbar navbar-expand-xl bg-info">
-        <div class="container">
-          <%=link_to image_tag("GNV_new.png"), root_path, { :class=>"navbar-brand" } %>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <nav class="navbar navbar-expand-md bg-info">
+        <%=link_to image_tag("GNV_new.png"), root_path, { :class=>"navbar-brand" } %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
 
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Places
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%=link_to "Places", places_path, { :class=>"dropdown-item"} %>
+                <a class="dropdown-item" href="places/new">Add New Place</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Events
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%=link_to "Events", events_path, { :class=>"dropdown-item"} %>
+                <a class="dropdown-item" href="events/new">Add New Event</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <%=link_to "Near Me", nearmes_path, { :class=>"nav-link"} %>
+            </li>
+            <% if current_user %>
               <li class="nav-item">
-                <%=link_to "Places", places_path, { :class=>"nav-link"} %>
+                <%=link_to "Logout", session_path(current_user.id), { method: :delete, class: "nav-link"} %>
               </li>
+            <% end %>
+          </ul>
 
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline my-0 my-sm-0" type="submit">
+              <i class="material-icons">search</i>
+            </button>
+          </form>
+          <ul class="navbar-nav nav justify-content-end">
+            <% if current_user %>
               <li class="nav-item">
-                <%=link_to "Events", events_path, { :class=>"nav-link"} %>
+                <%= link_to current_user.uname, profiles_path, { :class=>"nav-link"} %>
               </li>
-
+            <% else %>
               <li class="nav-item">
-                <%=link_to "Near Me", nearmes_path, { :class=>"nav-link"} %>
+                <%=link_to "Login/Signup", sessions_path, { :class=>"nav-link"} %>
               </li>
-              <% if current_user %>
-                <li class="nav-item">
-                  <%=link_to "Logout", session_path(current_user.id), { method: :delete, class: "nav-link"} %>
-                </li>
-              <% end %>
-            </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline my-0 my-sm-0" type="submit">
-                <i class="material-icons">search</i>
-              </button>
-            </form>
-            <ul class="navbar-nav nav justify-content-end">
-              <% if current_user %>
-                <li class="nav-item">
-                  <%= link_to current_user.uname, profiles_path, { :class=>"nav-link"} %>
-                </li>
-              <% else %>
-                <li class="nav-item">
-                  <%=link_to "Login/Signup", sessions_path, { :class=>"nav-link"} %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </header>
@@ -68,11 +79,10 @@
       </div>
     <% end %>
 
-
     <div class="content">
-    <%= yield %>
+      <%= yield %>
     </div>
-    
+
     <footer class="footer">
       <div class="container">
         <div class="copyright float-right">

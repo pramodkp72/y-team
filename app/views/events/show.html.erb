@@ -1,4 +1,3 @@
-<div class="undernav">
   <div class="container">
     <div class="card">
       <div class="card-body">
@@ -41,18 +40,55 @@
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <div class="card-body">
-              <h4 class="card-title">Review</h4>
-              <h6 class="card-subtitle mb-2 text-muted">Comments</h6>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci est, efficitur ac elementum nec, dapibus nec nunc. Integer vitae tincidunt ligula. Nunc dignissim vehicula diam, euismod aliquet erat eleifend ac. Curabitur eu
-                porta turpis. Aliquam erat volutpat. Nulla purus arcu, euismod in nulla ut, gravida viverra sem. Integer diam ipsum, elementum vel arcu dignissim, efficitur tempus sapien.</p>
-              <a href="#0" class="card-link">Card link</a>
-              <a href="#0" class="card-link">Another link</a>
+              <div class="card-body">
+                <h4 class="card-title">Review</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Comments</h6>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  Launch demo modal
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Add a Comment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= form_for @event_comment do |form| %>
+                        <%= hidden_field_tag :event_id, @event.id %>
+                          <div class="input-group mb-3">
+                            <%= form.text_field :title, class: 'form-control', placeholder: :title, 'aria-label': :title, 'aria-describedby': 'basic-addon2', required: true %>
+                          </div>
+                          <div class="input-group mb-3">
+                            <%= form.text_area :text, class: 'form-control', placeholder: 'Comment', 'aria-label': :text, 'aria-describedby': 'basic-addon2', required: true %>
+                          </div>
+                      </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <%= form.submit :submit, class:"btn btn-secondary" %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <h4 class="card-title">Comments</h4>
+                
+                <% @event_comments.select{|e| e.event_id == @event.id}.each do |ec| %>  
+                  <p class = "card-text">
+                  <%= ec.title %>
+                  <br>
+                  <%= ec.text %>
+                  </br>
+                  </p>
+                <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

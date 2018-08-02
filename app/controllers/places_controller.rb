@@ -1,5 +1,4 @@
 class PlacesController < ApplicationController
-  skip_before_action :verify_authenticity_token
   before_action :require_user, only: [:show]
   #list all places
   def index
@@ -23,7 +22,6 @@ class PlacesController < ApplicationController
     @place_comments = PlaceComment.all
     @place = Place.find(params[:id])
     puts @place.id
-    puts "asdasdasdsadasdsadasdasdasdasdasdasdasdasdasdadasdasdas"
     @category = Category.find(@place.cat_id)
   end
 
