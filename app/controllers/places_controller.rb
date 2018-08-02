@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
-  before_action :require_user, only: [:new]
+
+  before_action :require_user, only: [:show]
   #list all places
   def index
     @places = Place.all
@@ -18,17 +19,13 @@ class PlacesController < ApplicationController
 
   #show single
   def show
-    @place_comment = PlaceComment.new
-    # only last 5 EH
-    @place_comments = PlaceComment.order(id: :desc).limit(6)
     @place = Place.find(params[:id])
     @category = Category.find(@place.cat_id)
-    @profiles = Profile.all
-    @users = User.all
   end
 
+  #creates new place. no error checking yet.
   private
-    def place_params
-      params.require(:place).permit(:name, :lat, :lng, :image_uri, :description, :cat_id, :address)
-    end
+  def place_params
+    params.require(:place).permit(:name, :lat, :lng, :image_uri, :description, :cat_id, :address)
+  end
 end
