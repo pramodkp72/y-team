@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   var getDescription = function(name){
     $.get({
-      url: url + name + "&location=29.6436325,-82.3571189&radius=1500&key=Fakekey"
+      url: url + name + "&location=29.6436325,-82.3571189&radius=1500&key=AIzaSyCio1lbC-bpZGEb7FEcwBryRGpVlLe96LQ"
     }).done(function(response){
 
       var exact_name1 = response.results[0].name;
@@ -40,7 +40,7 @@ $(document).ready(function(){
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?location=29.650203500000003,-82.3237312&query=";
 
     $.get({
-      url: url + name + "&key=Fakekey",
+      url: url + name + "&key=AIzaSyCio1lbC-bpZGEb7FEcwBryRGpVlLe96LQ",
     }).done(function(response){
 
       var target = $('#place_googlename option:selected').val();
