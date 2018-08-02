@@ -19,7 +19,8 @@ class PlacesController < ApplicationController
   #show single
   def show
     @place_comment = PlaceComment.new
-    @place_comments = PlaceComment.all
+    # only last 5 EH
+    @place_comments = PlaceComment.order(id: :desc).limit(6)
     @place = Place.find(params[:id])
     @category = Category.find(@place.cat_id)
     @profiles = Profile.all

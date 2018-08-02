@@ -20,8 +20,8 @@ class EventCommentsController < ApplicationController
     @event_comment.enabled = 1
     @event_comment.save!
 
-    flash[:success] = @event_comment.title + " has been added"
-    redirect_to action: "index"
+    # flash[:success] = @event_comment.title + " has been added"
+    redirect_to event_path(:id => @event_comment.event_id)
 end
 
 private
