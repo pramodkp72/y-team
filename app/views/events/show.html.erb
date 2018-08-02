@@ -29,7 +29,7 @@
           <div class="col-md-6 mb-3">
             <div class="card-body">
               <h4 class="card-title">
-                <strong><%= @event.name %> @ <%= Place.find(@event.place_id).name %> </strong> - <%= @category.name %>
+                <strong><%= @event.name %> @ <%= link_to Place.find(@event.place_id).name, place_path(@event.place_id) %> </strong> - <%= @category.name %>
               </h4>
               <h6 class="text-right">Added by <%=User.find(@event.user_id).uname %></h6>
               <hr>
