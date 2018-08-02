@@ -204,11 +204,6 @@ a.text-primary:active, a.text-primary:focus, a.text-primary:hover {
   width: 80px;
 }
 
-//I know this might slow things down but I need it...
-
-.simple-space {
-  height: 10px;
-}
 // can prob be removed and use container class
 
 .card-new {
@@ -304,10 +299,6 @@ a.text-primary:active, a.text-primary:focus, a.text-primary:hover {
   text-align: center;
   z-index: 1;
   font-weight: bold;
-}
-
-.img-circle {
-  border-radius: 50%;
 }
 
 .logo-head {
