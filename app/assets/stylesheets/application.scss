@@ -62,10 +62,21 @@ a:hover {
   opacity: 1;
 }
 
-.btn-secondary {
+.btn .btn-secondary {
   background-color: #2196f3;
   color: white;
 }
+
+btn-secondary {
+  background-color: #2196f3;
+  color: white;
+}
+
+input.btn.btn-secondary{
+  background-color: #2196f3;
+  color: white;
+}
+
 
 .btn-link {
   background-color: transparent;
@@ -181,6 +192,14 @@ a.bg-primary:active, a.bg-primary:focus, a.bg-primary:hover {
 a.text-primary:active, a.text-primary:focus, a.text-primary:hover {
   color: #1976d2
  !important;
+}
+
+.modal-footer .btn-secondary, .modal-footer .btn-secondary:active, .modal-footer .btn-secondary:focus, .modal-footer .btn-secondary:hover {
+  color: #2196f3;
+}
+
+.submit {
+  color: var(--info);
 }
 
 

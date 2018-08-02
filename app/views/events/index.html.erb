@@ -7,10 +7,11 @@
       <ul class="list-unstyled">
         <% @events.each do |event| %>
           <li class="media">
-            <img class="mr-3" src="<%= Place.find(event.place_id).image_uri %>" alt="<%= Place.find(event.place_id).name %>">
+            <a href="<%=event_path(event)%>">
+            <img class="mr-3" src="<%= Place.find(event.place_id).image_uri %>" alt="<%= Place.find(event.place_id).name %>"></a>
             <div class="media-body">
-              <h5 class="mt-0 mb-1"><%= link_to event.name, event_path(event) %></h5>
-              <%=event.description%>
+              <h5 class="mt-0 mb-1 text-left"><%= link_to event.name, event_path(event) %></h5>
+              <p class="text-left"><%=event.description%></p>
             </div>
           </li>
         <% end %>
